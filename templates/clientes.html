@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumidor</title>
+
+    <style>
+         body{
+            width: 100vm;
+            height: 100vh;
+            background-image: url("{{url_for('static',filename='clientes.jpg')}}");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+        }
+
+
+h1{
+    text-align: center;
+    font: normal 40pt arial
+}
+
+h2{
+    text-align: center;
+    font: normal 20pt arial
+}
+
+
+form{
+    text-align: center;
+    font: normal 15pt arial
+}
+
+    .center-image {
+        text-align: center; /* Centralizar o conteúdo dentro do elemento */
+}
+
+nav {
+    background-color: #333; /* Cor de fundo da barra de menus */
+    padding: 10px 0; /* Espaçamento interno (topo e base) */
+}
+
+nav ul {
+    list-style-type: none; 
+    margin: 0pt;
+    padding: 0pt;
+    text-align: center; 
+}
+
+nav ul li {
+    display: inline; 
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white; /* Cor do texto dos links */
+    text-decoration: none; /* Remover sublinhado dos links */
+    font: normal 12pt arial
+}
+
+nav ul li a:hover{
+    background-color: aqua; 
+    color: blue;
+}
+
+table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            text-align: left;
+            font: normal 12pt Arial, sans-serif;
+        }
+
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #333;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Olá Consumidor!</h1>
+    <nav>
+        <ul>
+           <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
+           <li><a href="{{ url_for('login') }}">Comerciantes</a></li>
+           <li><a href="{{ url_for('clientes') }}">Consumidores</a></li>
+           <li><a href="{{ url_for('sobre') }}">sobre</a></li>
+        </ul>
+    </nav>
+    
+    <h2>O que você procura hoje?</h2>
+    <form action="/pesquisar_clientes" method="GET">
+        <label for="query">Pesquisar:</label>
+        <input type="text" id="query" name="query" required>
+        <button type="submit">Pesquisar</button>
+    </form>
+    <br>
+    {% if produtos %}
+    <table border="6">
+        <tr>
+            
+            <td>produto</td>
+            <td>descrição</td>
+            <td>preço_Normal</td>
+            <td>preço_promocional</td>
+            <td>comercio</td>
+            <td>endereço</td>
+            <td>telefone</td>
+            <td>validade_promocao</td>            
+        </tr>
+        {% for produto in produtos %}
+        <tr>
+            
+            <td>{{ produto.produto }}</td>
+            <td>{{ produto.descricao }}</td>
+            <td>{{ produto.preco_normal }}</td>
+            <td>{{ produto.preco_promocional }}</td>
+            <td>{{ produto.comercio }}</td>
+            <td>{{ produto.endereco }}</td>
+            <td>{{ produto.telefone }}</td>
+            <td>{{ produto.validade_promocao }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html>

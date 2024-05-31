@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Sobre</title>
+</head>
+<body>
+    <h1>VenBarato</h1>
+    
+<style>
+    
+     body{
+            width: 100vm;
+            height: 100vh;
+            background-image: url("{{url_for('static',filename='graduacao.png')}}");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+    }
+
+    h1{
+        text-align: center;
+        font: normal 30pt arial
+    }
+
+    p{
+        text-align: center;
+        font:normal 20pt arial
+    
+    }
+
+    nav {
+    background-color: #333; /* Cor de fundo da barra de menus */
+    padding: 10px 0; /* Espaçamento interno (topo e base) */
+}
+
+nav ul {
+    list-style-type: none; /* Remover marcadores de lista */
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centralizar os itens do menu horizontalmente */
+}
+
+nav ul li {
+    display: inline; /* Exibir os itens de menu em linha */
+    margin-right: 20px; /* Espaçamento entre os itens do menu */
+}
+
+nav ul li a {
+    color: white; /* Cor do texto dos links */
+    text-decoration: none; /* Remover sublinhado dos links */
+    font: normal 12pt arial
+}
+
+nav ul li a:hover{
+    background-color: aqua; 
+    color: blue;
+}
+ 
+</style>
+
+<nav>
+    <ul>
+        <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
+        <li><a href="{{ url_for('login') }}">Comerciantes</a></li>
+        <li><a href="{{ url_for('clientes') }}">Consumidores</a></li>
+        <li><a href="{{ url_for('sobre') }}">sobre</a></li>
+    </ul>
+</nav>
+
+
+    
+    <p>Este site foi criado por alunos da Univesp como um projeto universitário para aplicar e aprimorar <br>
+    nossas habilidades em desenvolvimento web.</p>
+
+     
+
+
+
+</body>
+
+</html>

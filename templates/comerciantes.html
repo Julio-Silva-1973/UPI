@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comerciantes</title>
+</head>
+
+<body>  
+    <style>  
+    
+        body{
+            width: 100vm;
+            height: 100vh;
+            background-image: url("{{url_for('static',filename='VenBarato.jpg')}}");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+        }
+
+        h1{
+            text-align: center;
+            color:rgb(19, 18, 18);
+            font: normal  40pt Arial
+        }
+
+        h2{
+            text-align: center;
+            background-color: rgb(183, 230, 16);
+            font: normal 50pt Arial
+        }
+
+        h3{
+            text-align: center;
+            color:rgb(1, 10, 19);
+            font: normal 15pt arial
+        }
+        
+        p{
+            text-align: center;
+            color: rgb(21, 22, 22);
+            font: normal 20pt arial
+        }
+
+        form{
+            text-align: center;
+            font: normal 15pt arial
+        }
+        h2{
+            text-align: center;
+        }
+
+        .center-image {
+            text-align: center; /* Centralizar o conteúdo dentro do elemento */
+        }
+
+    nav {
+    background-color: #333; /* Cor de fundo da barra de menus */
+    padding: 10px 0; /* Espaçamento interno (topo e base) */
+}
+
+    nav ul {
+    list-style-type: none; /* Remover marcadores de lista */
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centralizar os itens do menu horizontalmente */
+}
+
+    nav ul li{
+    display: inline; /* Exibir os itens de menu em linha */
+    margin-right: 20px; /* Espaçamento entre os itens do menu */
+}
+
+    nav ul li a {
+    color: white; /* Cor do texto dos links */
+    text-decoration: none; /* Remover sublinhado dos links */
+    font: normal 12pt arial
+}
+
+    nav ul li a:hover{ 
+    color: blue;
+}
+    label{
+        color:rgb(17, 17, 19);
+        
+    }
+
+    .button-container {
+            text-align: center;
+            margin-top: 20px;
+    }
+
+        button {
+            font: normal 15pt Arial;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+    }
+
+        button:hover {
+            background-color: blue;
+        }
+
+
+    </style>
+    <h1>Olá Comerciantes!</h1>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
+            <li><a href="{{ url_for('login') }}">Comerciantes</a></li>
+            <li><a href="{{ url_for('clientes') }}">Consumidores</a></li>
+            <li><a href="{{ url_for('sobre') }}">sobre</a></li>
+        </ul>
+    </nav>
+
+    <h2>Promoção do Dia</h2>
+
+    <p>Cadastre seus produtos em promoção e encontre consumidores que estão a procura de produtos com os melhores preços! </p>
+        
+   
+
+    
+    <h3>Após cadastrar o seu produto,<br> pesquise no menu consumidores<br> no alto da página digitando o <br>
+    nome do produto como foi cadastrado.</h3>
+
+    <div class="button-container">
+        <button onclick="location.href='{{ url_for('cadastro') }}'">Cadastrar</button>
+    </div>
+
+   
+</body>
+</html>

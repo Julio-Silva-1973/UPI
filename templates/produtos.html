@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+</head>
+<body>
+    <h1>Produtos em Promoção</h1>
+    <br>
+    <table border="7">
+        <tr>
+            <td>ID</td>
+            <td>produto</td>
+            <td>descricao</td>
+            <td>preco_normal</td>
+            <td>preco_promocional</td>
+            <td>comercio</td>
+            <td>endereço</td>
+            <td>telefone</td>
+            <td>validade_promocao</td>            
+            <td>Excluir</td>
+        </tr>
+        {% for produtos in produtos %}
+        <tr>
+            <td>{{produtos._id}}</td>
+            <td>{{produtos.produto}}</td>
+            <td>{{produtos.descricao}}</td>
+            <td>{{produtos.preco_normal}}</td>
+            <td>{{produtos.preco_promocional}}</td>
+            <td>{{produtos.comercio}}</td>
+            <td>{{produtos.endereco}}</td>
+            <td>{{produtos.telfone}}</td>
+            <td>{{produtos.validade_promocao}}</td>
+            <td><a href="/excluir/{{produtos.id}}">Excluir</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

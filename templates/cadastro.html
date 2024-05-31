@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        input {
+            font-size: 20px;
+            padding: 4px;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+        label {
+            padding: 20px;
+            margin-right: 5px;
+        }
+        button {
+            margin-top: 35px;
+            font-size: 20px;
+            background-color: aqua;
+            cursor: pointer;
+        }
+        .cad {
+            height: 700px;
+            background-color: blue;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="cad">
+        <h1>CADASTRAR PRODUTOS:</h1>
+        <form method="POST" action="{{ url_for('recebe_dados') }}">
+            <label for="produto">Produto:</label><br>
+            <input type="text" id="produto" name="produto" required><br>
+
+            <label for="descricao">Descrição:</label><br>
+            <input type="text" id="descricao" name="descricao" required><br>
+
+            <label for="preco_normal">Preço Normal:</label><br>
+            <input type="text" id="preco_normal" name="preco_normal" required><br>
+
+            <label for="preco_promocional">Preço Promocional:</label><br>
+            <input type="text" id="preco_promocional" name="preco_promocional" required><br>
+
+            <label for="comercio">Comércio:</label><br>
+            <input type="text" id="comercio" name="comercio" required><br>
+
+            <label for="endereco">Endereço:</label><br>
+            <input type="text" id="endereco" name="endereco" required><br>
+
+            <label for="telefone">Telefone:</label><br>
+            <input type="text" id="telefone" name="telefone" required><br>
+
+            <label for="validade_promocao">Validade da Promoção:</label><br>
+            <input type="text" id="validade_promocao" name="validade_promocao" required><br>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>

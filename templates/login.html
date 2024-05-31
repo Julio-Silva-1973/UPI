@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro e Login</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-image: url("{{ url_for('static', filename='login.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #080808;
+        }
+        h1 {
+            text-align: center;
+            font: normal 30pt Arial;
+        }
+        h2, h3 {
+            text-align: center;
+        }
+        div {
+            text-align: center;
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem vindo a nossa Plataforma</h1>
+    <h2>Cadastro e Login</h2>
+    <h3>Se você é um usuário cadastrado, entre com seu login e senha ou cadastre-se.</h3>
+
+    <div id="formularioLogin">
+        <h2>Login</h2>
+        <form action="{{ url_for('login') }}" method="post">
+            <label for="login">Login:</label><br>
+            <input type="text" id="login" name="username" required><br>
+            <label for="senha">Senha:</label><br>
+            <input type="password" id="senha" name="password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        {% if mensagem %}
+        <label id="mensagemLogin">{{ mensagem }}</label>
+        {% endif %}
+    </div>
+
+    <div id="formularioCadastro">
+        <h2>Cadastro</h2>
+        <form action="{{ url_for('cadastro') }}" method="post">
+            <label for="nomeCadastro">Nome:</label><br>
+            <input type="text" id="nomeCadastro" name="nome" required><br>
+            <label for="loginCadastro">Login:</label><br>
+            <input type="text" id="loginCadastro" name="username" required><br>
+            <label for="senhaCadastro">Senha:</label><br>
+            <input type="password" id="senhaCadastro" name="password" required><br>
+            <button type="submit">Cadastrar</button>
+        </form>
+        {% if mensagem_cadastro %}
+        <label id="mensagemCadastro">{{ mensagem_cadastro }}</label>
+        {% endif %}
+    </div>
+</body>
+</html>

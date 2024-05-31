@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel = "comerciantes" href ="comerciante.html">-->
+    <title>VenBarato</title>
+</head>
+<body>
+    <h1>Bem-vindo à nossa plataforma!</h1>
+       
+    
+    <nav> <!--Menu de comandos da página --> 
+        <ul>
+            <li><a href="{{ url_for('login') }}">comerciantes</a></li>
+            <li><a href="{{ url_for('clientes') }}">Consumidores</a></li>
+            <li><a href="{{ url_for('sobre') }}">sobre</a></li>
+        </ul>
+    </nav>
+
+    <h2>Aqui é lugar de vender e comprar barato!</h2>
+
+    
+    <STYLE>
+body{
+        width: 100vm;
+        height: 100vh;
+        background-image: url("{{url_for('static',filename='cifrao.jpg')}}");
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #080808;
+    }
+
+        body{
+            text-align: center; /* Configuração dos parágrafos do corpo da página */
+            
+        } 
+        h1{
+            text-align: center;
+            font: bold 20pt Arial
+        }
+
+        h2{
+            text-align: center;
+            font: bold 20pt Arial
+        }
+
+        p{
+            color: beige;
+            
+        }
+
+        nav {
+    background-color: #333; /* Cor de fundo da barra de menus */
+    padding: 10px 0; /* Espaçamento interno (topo e base) */
+}
+
+nav ul {
+    list-style-type: none; /* Remover marcadores de lista */
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centralizar os itens do menu horizontalmente */
+}
+
+nav ul li {
+    display: inline; /* Exibir os itens de menu em linha */
+    margin-right: 20px; /* Espaçamento entre os itens do menu */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; 
+}
+
+nav ul li a:hover{  
+    background-color: aqua; 
+    color: blue;
+}
+
+   </STYLE>
+
+   <button onclick="exibirTexto()">Tutorial de uso</button>
+   <div id = "caixadeTexto"></div><br>
+
+   <button onclick="exibirTexto1()">Comerciantes</button>
+   <div id = "caixadeTexto1"></div><br>
+
+   <button onclick="exibirTexto2()">Consumidores</button>
+   <div id = "caixadeTexto2"></div>
+
+   
+</body>
+<script>
+    window.alert('Bem Vindo a nossa plataforma') 
+
+    function exibirTexto() {
+        var caixadeTexto = document.getElementById("caixadeTexto");
+        var texto = "Para saber mais escolha um dos botões abaixo:";
+        caixadeTexto.innerHTML = texto;
+        caixadeTexto.classList.add("mostrar");
+    }
+
+    function exibirTexto1() {
+        var caixadeTexto1 = document.getElementById("caixadeTexto1");
+        var texto1 = "Olá amigo comerciante! Para usar esta aplicação comece clicando no menu comerciantes Depois, faça o seu cadastro e login"
+        caixadeTexto1.innerHTML = texto1;
+        caixadeTexto1.classList.add("mostrar");
+    }
+
+    function exibirTexto2() {
+        var caixadeTexto2 = document.getElementById("caixadeTexto2");
+        var texto2 = "Olá amigo consumidor! Para usar esta aplicação comece clicando no menu consumidor e digite o produto desejado, escolha a melhor oferta!";
+        caixadeTexto2.innerHTML = texto2;
+        caixadeTexto2.classList.add("mostrar");
+    }
+    </script>
+</html>
