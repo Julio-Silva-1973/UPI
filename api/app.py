@@ -5,8 +5,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/comerciantes'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'supersecretkey'
-
 db = SQLAlchemy(app)
+
 
 class Usuario(db.Model):
     id = db.Column(db.Integer, primary_key=True)
