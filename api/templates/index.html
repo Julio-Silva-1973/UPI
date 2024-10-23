@@ -12,13 +12,15 @@
     
     <nav> <!--Menu de comandos da página --> 
         <ul>
-            <li><a href="{{ url_for('login') }}">comerciantes</a></li>
+            <li><a href="{{ url_for('login') }}">comercio - serviços</a></li>
             <li><a href="{{ url_for('clientes') }}">Consumidores</a></li>
             <li><a href="{{ url_for('sobre') }}">sobre</a></li>
         </ul>
     </nav>
 
     <h2>Aqui é lugar de vender e comprar barato!</h2>
+
+    
 
     
     <STYLE>
@@ -80,10 +82,21 @@ nav ul li a:hover{
     color: blue;
 }
 
+    h3{
+        font: normal 70px arial;
+        background-color: rgb(216, 29, 60);
+
+}
+
+    footer p{
+        font: normal 15px arial;
+        text-align: center;
+        color: black;
+    }
+
    </STYLE>
 
-   <button onclick="exibirTexto()">Tutorial de uso</button>
-   <div id = "caixadeTexto"></div><br>
+   <p1>Clique nos botões para mais informações:</p1><br>
 
    <button onclick="exibirTexto1()">Comerciantes</button>
    <div id = "caixadeTexto1"></div><br>
@@ -117,4 +130,9 @@ nav ul li a:hover{
         caixadeTexto2.classList.add("mostrar");
     }
     </script>
+    
+        <footer>
+            <p>2024  (C) Baratino todos os direitos reservados - Política de privacidade</p>
+    
+        </footer>
 </html>
