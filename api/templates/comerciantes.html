@@ -7,7 +7,9 @@
 </head>
 
 <body>  
-    <style>  
+    <style> 
+    
+         
     
         body{
             width: 100vm;
@@ -88,6 +90,8 @@
         
     }
 
+     
+
     .button-container {
             text-align: center;
             margin-top: 20px;
@@ -106,6 +110,38 @@
             background-color: blue;
         }
 
+        #button-info {
+            display: flex;
+            text-align: center;
+            margin-left: 530px;
+        }
+
+
+         /* Container para centralizar o conteúdo */
+         #container {
+            text-align: center;
+            
+        }
+
+
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            align-items: center;
+        }
+
+        /* Estilo para aumentar a área de texto */
+        .caixa-grande {
+            width: 500px;  /* Aumenta a largura da área de texto */
+            max-width: 500px; /* Limita a largura máxima */
+            height: 100px; /* Define a altura */
+            padding: 10px; /* Espaçamento interno */
+            font-size: 16px; /* Tamanho da fonte */
+            margin-top: 20px;
+        }
 
     </style>
     <h1>Olá Comerciantes!</h1>
@@ -122,16 +158,37 @@
     <h2>Promoção do Dia</h2>
 
     <p>Cadastre seus produtos em promoção e encontre consumidores que estão a procura de produtos com os melhores preços! </p>
-        
-   
-
+     
+    <button id="button-info" onclick="CaixaTexto()">Informações para o cadastro de produtos</button>
     
-    <h3>Após cadastrar o seu produto,<br> pesquise no menu consumidores<br> no alto da página digitando o <br>
-    nome do produto como foi cadastrado.</h3>
+    <!-- Aqui é onde a caixa de texto será adicionada -->
+    <div id="container"></div>
 
+    <script>
+        function CaixaTexto() {
+            // Cria um elemento de textarea
+            var textarea = document.createElement("textarea");
+
+            // Define o valor (texto) padrão que aparecerá dentro da caixa de texto
+            textarea.value = "Para cadastrar seu(s) produto(s) clique no botão cadastrar abaixo\n" +
+                             "e preencha todos os campos.\n" +
+                             "Para consultar clique no menu consumidores\n" +
+                             "e pesquise pelo nome do produto.";
+
+            // Adiciona a classe para aumentar a área de texto
+            textarea.classList.add("caixa-grande");
+
+            // Adiciona o textarea ao container
+            var container = document.getElementById("container");
+            container.appendChild(textarea);
+        }
+        </script>
+    
     <div class="button-container">
         <button onclick="location.href='{{ url_for('cadastro') }}'">Cadastrar</button>
     </div>
+
+   
 
    
 </body>
